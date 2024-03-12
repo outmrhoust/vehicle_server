@@ -1,6 +1,8 @@
 name: Vehicle server
 on:
   - push
+  - pull_request
+
 jobs:
   build_project:
     runs-on: ubuntu-22.04
