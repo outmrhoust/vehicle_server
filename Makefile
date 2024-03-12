@@ -27,11 +27,14 @@ stop_dev_db:
 	docker container stop $(DB_CONTAINER_NAME)
 
 .PHONY: all
-all: clean dist
-	go build -o ./dist ./cmd/server/main.go 
+all: clean dist dev
+
 .PHONY: clean
 clean:
 	rm -rf ./dist
 .PHONY: dist
 dist:
 	mkdir dist
+.PHONY: build
+build:
+	go build -o ./dist ./cmd/server/main.go
