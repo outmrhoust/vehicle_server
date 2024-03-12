@@ -17,4 +17,3 @@ jobs:
         with:
           message: ${{ steps.read.outputs.content }}
       - run: ls -l # Liste les fichier du répertoire courant
-      - run: cat README.md | cowsay # Affiche le contenu du fichier `README.md` à la base du dépôt
