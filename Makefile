@@ -27,7 +27,7 @@ stop_dev_db:
 	docker container stop $(DB_CONTAINER_NAME)
 
 .PHONY: all
-all: clean dist dev
+all: clean dist build
 
 .PHONY: clean
 clean:
