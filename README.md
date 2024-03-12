@@ -10,7 +10,7 @@ docker rm -f vehicle-server-db
 
 ./server -listen-address=:8080 -database-url=postgres://vehicle-server:secret@localhost:5432/vehicle-server
 
-# Créer un véhicule
+# Créer un véhicule:
 
 ```bash
 curl --header "Content-Type: application/json" --data '{"latitude": 3.32,"longitude": 4.323, "shortcode":"abed", "battery": 10}' localhost:8080/vehicles | jq .
