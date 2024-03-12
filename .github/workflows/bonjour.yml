@@ -15,6 +15,6 @@ jobs:
       - name: output the message on actions result
         uses: Code-Hex/neo-cowsay-action@v1
         with:
-          message: ${{ steps.read.outputs.content }
+          message: ${{ steps.read.outputs.content }}
       - run: ls -l # Liste les fichier du répertoire courant
       - run: cat README.md | cowsay # Affiche le contenu du fichier `README.md` à la base du dépôt
