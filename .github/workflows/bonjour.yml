@@ -3,10 +3,10 @@ on:
   - push
 jobs:
   dire_bonjour:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     container:
       image: ghcr.io/cicd-lectures/gitpod:latest
-      options: --user root
+      options: --user=root
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
