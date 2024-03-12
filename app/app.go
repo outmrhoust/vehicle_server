@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/cicd-lectures/vehicle-server/storage"
-	"github.com/cicd-lectures/vehicle-server/vehicle"
+	"github.com/outmrhoust/vehicle-server/storage"
+	"github.com/outmrhoust/vehicle-server/vehicle"
 	"go.uber.org/zap"
 )
 
