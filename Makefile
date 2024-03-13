@@ -38,3 +38,11 @@ dist:
 .PHONY: build
 build:
 	go build -o ./dist ./cmd/server/main.go
+
+.PHONY: unit_test
+unit_test:
+	go test -v -cover ./...
+
+.PHONY: integration_test
+integration_test:
+	go test -v -count=1 --tags=integration ./app
