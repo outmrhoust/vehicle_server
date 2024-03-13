@@ -27,7 +27,7 @@ stop_dev_db:
 	docker container stop $(DB_CONTAINER_NAME)
 
 .PHONY: all
-all: clean dist build
+all: clean dist build unit_test integration_test package
 
 .PHONY: clean
 clean:
@@ -46,3 +46,6 @@ unit_test:
 .PHONY: integration_test
 integration_test:
 	go test -v -count=1 --tags=integration ./app
+.PHONY: package
+package:
+	docker image build --tag=vehicle_server:1.1.0 /workspace/vehicle-server/
