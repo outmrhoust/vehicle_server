@@ -3,7 +3,8 @@ POSTGRES_USER=vehicle-server
 POSTGRES_PASSWORD=secret
 POSTGRES_DB=vehicle-server
 DATABASE_URL=postgres://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@localhost:5432/$(POSTGRES_DB)
-
+IMAGE?=outmrhoust/vehicle-server
+TAG?=dev
 .PHONY: dev
 dev:
 	go run ./cmd/server \
@@ -48,4 +49,4 @@ integration_test:
 	go test -v -count=1 --tags=integration ./app
 .PHONY: package
 package:
-	docker image build --tag=vehicle_server:1.1.0 /workspace/vehicle-server/
+	docker image build -t $(IMAGE):$(TAG) ./
