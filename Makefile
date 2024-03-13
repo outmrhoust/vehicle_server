@@ -51,6 +51,4 @@ integration_test:
 package:
 	docker image build -t $(IMAGE):$(TAG) ./
 .PHONY: release
-	git tag 1.0.0 -a -m "Release ${TAG}"
-	git push origin ${TAG}
 	docker push $(IMAGE):$(TAG)
