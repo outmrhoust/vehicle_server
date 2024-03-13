@@ -51,4 +51,5 @@ integration_test:
 package:
 	docker image build -t $(IMAGE):$(TAG) ./
 .PHONY: release
+release:
 	docker push $(IMAGE):$(TAG)
