@@ -4,7 +4,7 @@ POSTGRES_PASSWORD=secret
 POSTGRES_DB=vehicle-server
 DATABASE_URL=postgres://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@localhost:5432/$(POSTGRES_DB)
 IMAGE?=outmrhoust/vehicle-server
-TAG?=dev
+TAG?=1.0.0
 .PHONY: dev
 dev:
 	go run ./cmd/server \
@@ -50,3 +50,7 @@ integration_test:
 .PHONY: package
 package:
 	docker image build -t $(IMAGE):$(TAG) ./
+.PHONY: release
+	git tag 1.0.0 -a -m "Release ${TAG}"
+	git push origin ${TAG}
+	docker push $(IMAGE):$(TAG)
