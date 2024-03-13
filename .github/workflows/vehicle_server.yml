@@ -13,5 +13,7 @@ jobs:
         with:
           go-version-file: './go.mod'
       - run: go version
+      - run: make unit_test
+      - run: make integration_test
       - run: make all
       - run: ls ./dist
