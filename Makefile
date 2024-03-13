@@ -38,3 +38,7 @@ dist:
 .PHONY: build
 build:
 	go build -o ./dist ./cmd/server/main.go
+
+.PHONY: unit_test
+unit_test:
+	go test -v -cover ./...
